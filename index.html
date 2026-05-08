@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sukaina Batool Naqvi | Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #052e1f, #000000);
+      color: #e5e5e5;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    nav div a {
+      margin-left: 20px;
+      font-size: 13px;
+      color: #aaa;
+      transition: 0.3s;
+    }
+
+    nav div a:hover {
+      color: #10b981;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid #10b981;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #10b981;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 54px;
+      line-height: 1.1;
+      color: white;
+    }
+
+    h2 span {
+      color: #10b981;
+    }
+
+    p {
+      margin-top: 20px;
+      color: #b5b5b5;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 10px;
+      margin-right: 10px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #10b981;
+      color: black;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background: #0ea371;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: #10b981;
+      color: #10b981;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 14px;
+      color: #10b981;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #10b981;
+    }
+
+    .card h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      padding: 100px 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* responsive */
+    @media(max-width:768px){
+      h2{font-size:38px;}
+      nav{padding:15px 20px;}
+      section{padding:70px 20px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <h1>Sukaina Naqvi</h1>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="badge">Aspiring Business Professional</div>
+      <h2>Building Modern <span>Business Impact</span></h2>
+      <p>
+        I am Sukaina Batool Naqvi — focused on business strategy, branding, communication,
+        and creative problem solving with a modern corporate mindset.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-outline" href="mailto:nsukaina4@outlook.com">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-title">ABOUT</div>
+    <div class="section-heading">Who I Am</div>
+    <p>
+      I am an aspiring business professional with strong interest in strategy, marketing,
+      leadership, and innovation. I aim to combine creativity with structured thinking
+      to build impactful solutions in the business world.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-title">SKILLS</div>
+    <div class="section-heading">What I Do</div>
+
+    <div class="grid">
+      <div class="card"><h3>Business Strategy</h3><p>Planning and analytical thinking</p></div>
+      <div class="card"><h3>Marketing</h3><p>Brand awareness and communication</p></div>
+      <div class="card"><h3>Leadership</h3><p>Team coordination and decision making</p></div>
+      <div class="card"><h3>Creative Thinking</h3><p>Innovative problem solving</p></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-title">PROJECTS</div>
+    <div class="section-heading">Featured Work</div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>SafeSwitch</h3>
+        <p>A business-focused innovation project demonstrating structured problem solving.</p>
+      </div>
+
+      <div class="card">
+        <h3>Zvyelle</h3>
+        <p>A branding and creative strategy project with entrepreneurial insight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="section-title">CONTACT</div>
+    <div class="section-heading">Let’s Connect</div>
+
+    <p>Email: <a href="mailto:nsukaina4@outlook.com">nsukaina4@outlook.com</a></p>
+    <p style="margin-top:10px;">
+      <a href="https://www.linkedin.com/in/sukaina-b-naqvi-5953aa3b6">LinkedIn</a> |
+      <a href="https://www.instagram.com/sukaina________n">Instagram</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Sukaina Batool Naqvi | Business Portfolio
+  </footer>
+
+</body>
+</html>
