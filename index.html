@@ -6,6 +6,7 @@
 <title>Sukaina Batool Naqvi | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
@@ -18,7 +19,6 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
-
 html{scroll-behavior:smooth;}
 
 body{
@@ -39,97 +39,44 @@ body:before{
   z-index:-2;
 }
 
-.glow{
-  position:fixed;
-  width:600px;
-  height:600px;
-  filter:blur(180px);
-  opacity:0.12;
-  z-index:-1;
-}
+.glow{position:fixed;width:600px;height:600px;filter:blur(180px);opacity:0.12;z-index:-1;}
 .glow1{top:-200px;left:-200px;background:#0f5132;}
 .glow2{bottom:-200px;right:-200px;background:#064e3b;}
 
 /* NAV */
 nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:16px 60px;
+  position:fixed;top:0;width:100%;
+  display:flex;justify-content:space-between;
+  padding:14px 60px;
   background:rgba(0,0,0,0.55);
   backdrop-filter:blur(14px);
   border-bottom:1px solid var(--border);
   z-index:1000;
 }
 
-nav h1{font-size:15px;color:#d1fae5;}
-nav a{margin-left:18px;font-size:12px;color:var(--muted);transition:.3s;}
-nav a:hover{color:var(--accent);}
+nav h1{font-size:14px;color:#d1fae5;}
+nav a{margin-left:16px;font-size:12px;color:var(--muted);transition:.3s;}
+nav a.active,nav a:hover{color:var(--accent);}
 
 /* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  padding:0 60px;
-}
+.hero{height:100vh;display:flex;align-items:center;padding:0 60px;}
+.badge{border:1px solid var(--accent);color:var(--accent);padding:6px 12px;border-radius:999px;font-size:11px;letter-spacing:2px;}
 
-.badge{
-  display:inline-block;
-  padding:6px 12px;
-  border:1px solid var(--accent);
-  border-radius:999px;
-  color:var(--accent);
-  font-size:11px;
-  letter-spacing:2px;
-  margin-bottom:16px;
-}
-
-h2{
-  font-size:64px;
-  line-height:1.05;
-}
-
-.sub{
-  max-width:750px;
-  margin-top:14px;
-  color:var(--muted);
-  line-height:1.6;
-  font-size:15px;
-}
+h2{font-size:64px;line-height:1.05;margin-top:14px;}
+.sub{max-width:750px;margin-top:12px;color:var(--muted);}
 
 .btns{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;}
-
-.btn{
-  padding:12px 18px;
-  border-radius:12px;
-  font-size:13px;
-  transition:.3s;
-  display:inline-block;
-}
-
+.btn{padding:12px 18px;border-radius:12px;font-size:13px;transition:.3s;}
 .primary{background:var(--accent);color:#000;font-weight:600;}
 .primary:hover{transform:translateY(-2px);}
-
 .outline{border:1px solid var(--border);}
 .outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
 
-section{
-  padding:90px 60px;
-  max-width:1100px;
-  margin:auto;
-}
-
+section{padding:80px 60px;max-width:1100px;margin:auto;}
 .kicker{color:var(--accent);font-size:11px;letter-spacing:3px;}
-.title{font-size:34px;margin:8px 0 24px;}
+.title{font-size:34px;margin:8px 0 22px;}
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
 
 .card{
   background:var(--card);
@@ -137,48 +84,42 @@ section{
   padding:20px;
   border-radius:16px;
   transition:.3s;
+  cursor:pointer;
 }
-
 .card:hover{transform:translateY(-6px);border-color:var(--accent);}
-
-.card h3{font-size:16px;margin-bottom:8px;}
+.card h3{font-size:16px;margin-bottom:6px;}
 .card p{font-size:13px;color:var(--muted);line-height:1.5;}
 
-/* TIMELINE */
-.timeline{
-  border-left:2px solid rgba(255,255,255,0.08);
-  padding-left:18px;
-}
-
-.item{margin-bottom:18px;}
-.item span{color:var(--accent);font-size:12px;}
+/* SKILL BAR */
+.skill{margin-bottom:14px;}
+.bar{height:6px;background:#111;border-radius:999px;overflow:hidden;}
+.fill{height:100%;background:var(--accent);width:0;transition:1.2s;}
 
 /* CONTACT */
-.contact{
-  display:grid;
-  gap:10px;
-  font-size:14px;
-  color:var(--muted);
+.contact i{color:var(--accent);margin-right:8px;}
+.contact div{margin:8px 0;color:var(--muted);}
+
+/* MODAL */
+.modal{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
 }
-
-footer{
-  text-align:center;
-  padding:30px;
-  color:#666;
-  border-top:1px solid rgba(255,255,255,0.05);
+.modal-content{
+  background:#06130f;
+  padding:24px;
+  max-width:500px;
+  border-radius:16px;
+  border:1px solid var(--border);
 }
+.close{float:right;cursor:pointer;color:#fff;}
 
-/* scroll reveal */
-.reveal{opacity:0;transform:translateY(20px);transition:.6s;}
-.reveal.show{opacity:1;transform:translateY(0);}
+footer{text-align:center;padding:30px;color:#666;border-top:1px solid rgba(255,255,255,0.05);}
 
-@media(max-width:768px){
-  h2{font-size:40px;}
-  nav{padding:14px 20px;}
-  section{padding:70px 20px;}
-  .hero{padding:0 20px;}
-}
-
+@media(max-width:768px){h2{font-size:40px;}nav{padding:14px 20px;}section{padding:70px 20px;}}
 </style>
 </head>
 <body>
@@ -202,7 +143,7 @@ footer{
   <div>
     <div class="badge">BUSINESS PORTFOLIO</div>
     <h2>Sukaina Batool Naqvi</h2>
-    <p class="sub">Aspiring business professional focused on strategy, marketing, leadership, and high-impact problem solving.</p>
+    <p class="sub">Aspiring business professional focused on strategy, marketing, leadership and high-impact execution.</p>
 
     <div class="btns">
       <a class="btn primary" href="#projects">View Work</a>
@@ -212,14 +153,14 @@ footer{
 </div>
 
 <!-- ABOUT -->
-<section id="about" class="reveal">
+<section id="about">
   <div class="kicker">ABOUT</div>
   <div class="title">Professional Summary</div>
-  <p class="sub">Motivated BBA student with strengths in leadership, analysis, teamwork, and structured thinking. Experienced in marketing simulations, entrepreneurship projects, and volunteer initiatives.</p>
+  <p class="sub">BBA student with strong leadership, analytical thinking, and entrepreneurial experience through real-world simulations and volunteering.</p>
 </section>
 
 <!-- EDUCATION -->
-<section id="education" class="reveal">
+<section id="education">
   <div class="kicker">EDUCATION</div>
   <div class="title">Academic Background</div>
 
@@ -231,61 +172,56 @@ footer{
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="reveal">
+<section id="experience">
   <div class="kicker">EXPERIENCE</div>
   <div class="title">Career Highlights</div>
 
-  <div class="timeline">
-    <div class="item">
-      <span>SafeSwitch</span>
-      <p>Led marketing strategy, branding, segmentation, and pitch development for smart safety startup concept.</p>
-    </div>
-
-    <div class="item">
-      <span>Zyvelle</span>
-      <p>Executed product branding and sales operations in entrepreneurial simulation project.</p>
-    </div>
-
-    <div class="item">
-      <span>CBTL Interview</span>
-      <p>Analyzed management workflow through structured interview with corporate manager.</p>
-    </div>
-
-    <div class="item">
-      <span>Volunteer Work</span>
-      <p>Engaged in child development activities at Dar-ul-Sukoon and Alkhidmat Agosh Home.</p>
-    </div>
+  <div class="grid">
+    <div class="card"><h3>SafeSwitch</h3><p>Led full startup strategy: branding, segmentation, marketing plan & investor pitch.</p></div>
+    <div class="card"><h3>Zyvelle</h3><p>Executed sales & branding operations in entrepreneurship simulation.</p></div>
+    <div class="card"><h3>CBTL Interview</h3><p>Analyzed corporate management workflow through structured interview.</p></div>
+    <div class="card"><h3>Volunteer Work</h3><p>Child engagement programs at Dar-ul-Sukoon & Alkhidmat.</p></div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="reveal">
+<section id="projects">
   <div class="kicker">PROJECTS</div>
-  <div class="title">Selected Work</div>
+  <div class="title">Case Studies</div>
 
   <div class="grid">
-    <div class="card">
+    <div class="card" onclick="openModal('SafeSwitch built as a smart electrical safety startup. Focused on market research, branding, segmentation, and investor pitch deck. Delivered structured business model with strong feasibility.')">
       <h3>SafeSwitch</h3>
-      <p>Full business model: product concept, market research, branding strategy, and investor pitch deck.</p>
+      <p>Click for full case study</p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="openModal('Zyvelle was a handmade product business simulation where I managed branding, sales execution, customer engagement and real stall operations.')">
       <h3>Zyvelle</h3>
-      <p>Built and executed micro-business including branding, customer engagement, and sales strategy.</p>
+      <p>Click for full case study</p>
     </div>
   </div>
 </section>
 
+<!-- SKILLS -->
+<section>
+  <div class="kicker">SKILLS</div>
+  <div class="title">Core Strengths</div>
+
+  <div class="skill"><p>Leadership</p><div class="bar"><div class="fill" data-w="90%"></div></div></div>
+  <div class="skill"><p>Critical Thinking</p><div class="bar"><div class="fill" data-w="85%"></div></div></div>
+  <div class="skill"><p>Communication</p><div class="bar"><div class="fill" data-w="88%"></div></div></div>
+</section>
+
 <!-- CONTACT -->
-<section id="contact" class="reveal">
+<section id="contact">
   <div class="kicker">CONTACT</div>
-  <div class="title">Let’s Connect</div>
+  <div class="title">Let’s Work Together</div>
 
   <div class="contact">
-    <div>📧 nsukaina4@outlook.com</div>
-    <div>📞 +92 332 3511903</div>
-    <div>🔗 linkedin.com/in/sukaina-naqvi-5953aa3b6</div>
-    <div>📸 instagram.com/sukaina________n</div>
+    <div><i class="fa-solid fa-envelope"></i> nsukaina4@outlook.com</div>
+    <div><i class="fa-solid fa-phone"></i> +92 332 3511903</div>
+    <div><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</div>
+    <div><i class="fa-brands fa-instagram"></i> Instagram</div>
   </div>
 
   <div class="btns">
@@ -295,12 +231,32 @@ footer{
 
 <footer>© 2026 Sukaina Batool Naqvi</footer>
 
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✖</span>
+    <p id="modalText"></p>
+  </div>
+</div>
+
 <script>
-const els=document.querySelectorAll('.reveal');
-const obs=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
-},{threshold:0.15});
-els.forEach(e=>obs.observe(e));
+function openModal(text){
+  document.getElementById('modalText').innerText=text;
+  document.getElementById('modal').style.display='flex';
+}
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+}
+
+// skill animation
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.fill').forEach(f=>{
+    const rect=f.getBoundingClientRect().top;
+    if(rect<window.innerHeight){
+      f.style.width=f.dataset.w;
+    }
+  });
+});
 </script>
 
 </body>
