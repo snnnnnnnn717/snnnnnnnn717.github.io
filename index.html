@@ -5,288 +5,307 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sukaina Batool Naqvi | Portfolio</title>
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
+
+    body{
+      background:radial-gradient(circle at top,#031a13 0%,#000 60%,#000 100%);
+      color:#e7e7e7;
+      overflow-x:hidden;
     }
 
-    body {
-      background: radial-gradient(circle at top, #052e1f, #000000);
-      color: #e5e5e5;
-      overflow-x: hidden;
+    a{text-decoration:none;color:inherit;}
+
+    /* GRID BACKGROUND */
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+      background-size:70px 70px;
+      pointer-events:none;
+      z-index:-2;
     }
 
-    a { color: inherit; text-decoration: none; }
+    /* GLOW */
+    .glow{
+      position:fixed;
+      width:600px;
+      height:600px;
+      filter:blur(180px);
+      opacity:0.14;
+      z-index:-1;
+    }
+
+    .g1{top:-180px;left:-180px;background:#0f5132;}
+    .g2{bottom:-200px;right:-200px;background:#064e3b;}
 
     /* NAV */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      backdrop-filter: blur(10px);
-      background: rgba(0,0,0,0.4);
-      display: flex;
-      justify-content: space-between;
-      padding: 18px 40px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      z-index: 1000;
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      padding:18px 60px;
+      background:rgba(0,0,0,0.5);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+      z-index:1000;
     }
 
-    nav h1 {
-      font-size: 18px;
-      font-weight: 600;
-      color: #ffffff;
+    nav h1{font-size:16px;font-weight:600;color:#d1fae5;}
+
+    nav a{
+      margin-left:22px;
+      font-size:12px;
+      color:#9ca3af;
+      transition:0.3s;
     }
 
-    nav div a {
-      margin-left: 20px;
-      font-size: 13px;
-      color: #aaa;
-      transition: 0.3s;
-    }
-
-    nav div a:hover {
-      color: #10b981;
-    }
+    nav a:hover{color:#10b981;}
 
     /* HERO */
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 0 40px;
+    .hero{
+      height:100vh;
+      display:flex;
+      align-items:center;
+      padding:0 60px;
     }
 
-    .hero-content {
-      max-width: 800px;
+    .badge{
+      display:inline-block;
+      padding:6px 14px;
+      border:1px solid #10b981;
+      border-radius:999px;
+      color:#10b981;
+      font-size:11px;
+      letter-spacing:2px;
+      margin-bottom:18px;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 6px 12px;
-      border: 1px solid #10b981;
-      border-radius: 999px;
-      font-size: 12px;
-      color: #10b981;
-      margin-bottom: 20px;
+    h2{
+      font-size:64px;
+      line-height:1.05;
+      color:#fff;
+      letter-spacing:-1px;
+      min-height:70px;
     }
 
-    h2 {
-      font-size: 54px;
-      line-height: 1.1;
-      color: white;
+    .cursor{
+      display:inline-block;
+      width:10px;
+      background:#10b981;
+      margin-left:5px;
+      animation:blink 1s infinite;
     }
 
-    h2 span {
-      color: #10b981;
+    @keyframes blink{
+      50%{opacity:0;}
     }
 
-    p {
-      margin-top: 20px;
-      color: #b5b5b5;
-      line-height: 1.6;
-      max-width: 600px;
+    .sub{
+      margin-top:18px;
+      max-width:780px;
+      color:#b5b5b5;
+      font-size:15px;
+      line-height:1.7;
     }
 
-    .buttons {
-      margin-top: 30px;
+    .btn{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:12px;
+      margin-right:12px;
+      margin-top:28px;
+      font-size:13px;
+      transition:0.3s;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 10px;
-      margin-right: 10px;
-      font-size: 14px;
-      transition: 0.3s;
+    .primary{background:#10b981;color:#000;font-weight:600;}
+    .primary:hover{transform:translateY(-2px);background:#0ea371;}
+
+    .outline{border:1px solid rgba(255,255,255,0.18);color:#e5e5e5;}
+    .outline:hover{border-color:#10b981;color:#10b981;transform:translateY(-2px);}
+
+    section{
+      padding:120px 60px;
+      max-width:1150px;
+      margin:auto;
     }
 
-    .btn-primary {
-      background: #10b981;
-      color: black;
-      font-weight: 600;
+    .kicker{
+      color:#10b981;
+      font-size:11px;
+      letter-spacing:3px;
+      margin-bottom:10px;
     }
 
-    .btn-primary:hover {
-      background: #0ea371;
+    .title{
+      font-size:40px;
+      margin-bottom:35px;
+      color:#fff;
     }
 
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,0.2);
-      color: white;
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
     }
 
-    .btn-outline:hover {
-      border-color: #10b981;
-      color: #10b981;
+    .card{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.06);
+      padding:24px;
+      border-radius:18px;
+      backdrop-filter:blur(12px);
+      transition:0.4s;
+      opacity:0;
+      transform:translateY(18px);
     }
 
-    /* SECTIONS */
-    section {
-      padding: 100px 40px;
-      max-width: 1100px;
-      margin: auto;
+    .card.show{
+      opacity:1;
+      transform:translateY(0);
     }
 
-    .section-title {
-      font-size: 14px;
-      color: #10b981;
-      letter-spacing: 3px;
-      margin-bottom: 10px;
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:#10b981;
     }
 
-    .section-heading {
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: white;
+    .card h3{color:#fff;margin-bottom:10px;}
+    .card p{font-size:13.5px;color:#cfcfcf;line-height:1.6;}
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#666;
+      border-top:1px solid rgba(255,255,255,0.05);
     }
 
-    /* CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #10b981;
-    }
-
-    .card h3 {
-      color: white;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    /* CONTACT */
-    .contact {
-      text-align: center;
-      padding: 100px 40px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #666;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    /* responsive */
     @media(max-width:768px){
-      h2{font-size:38px;}
-      nav{padding:15px 20px;}
-      section{padding:70px 20px;}
+      h2{font-size:42px;}
+      nav{padding:14px 20px;}
+      section{padding:90px 20px;}
+      .hero{padding:0 20px;}
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <h1>Sukaina Naqvi</h1>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<div class="glow g1"></div>
+<div class="glow g2"></div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-content">
-      <div class="badge">Aspiring Business Professional</div>
-      <h2>Building Modern <span>Business Impact</span></h2>
-      <p>
-        I am Sukaina Batool Naqvi — focused on business strategy, branding, communication,
-        and creative problem solving with a modern corporate mindset.
-      </p>
-
-      <div class="buttons">
-        <a class="btn btn-primary" href="#projects">View Projects</a>
-        <a class="btn btn-outline" href="mailto:nsukaina4@outlook.com">Contact</a>
-      </div>
-    </div>
+<nav>
+  <h1>Sukaina Naqvi</h1>
+  <div>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </div>
+</nav>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-title">ABOUT</div>
-    <div class="section-heading">Who I Am</div>
-    <p>
-      I am an aspiring business professional with strong interest in strategy, marketing,
-      leadership, and innovation. I aim to combine creativity with structured thinking
-      to build impactful solutions in the business world.
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="badge">BUSINESS PORTFOLIO</div>
+
+    <h2 id="type"></h2><span class="cursor"></span>
+
+    <p class="sub">
+      Aspiring business professional focused on strategy, marketing, leadership and
+      creative problem solving with a modern corporate mindset.
     </p>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-title">SKILLS</div>
-    <div class="section-heading">What I Do</div>
+    <a class="btn primary" href="#projects">Explore Work</a>
+    <a class="btn outline" href="mailto:nsukaina4@outlook.com">Contact</a>
+  </div>
+</div>
 
-    <div class="grid">
-      <div class="card"><h3>Business Strategy</h3><p>Planning and analytical thinking</p></div>
-      <div class="card"><h3>Marketing</h3><p>Brand awareness and communication</p></div>
-      <div class="card"><h3>Leadership</h3><p>Team coordination and decision making</p></div>
-      <div class="card"><h3>Creative Thinking</h3><p>Innovative problem solving</p></div>
-    </div>
-  </section>
+<!-- ABOUT -->
+<section id="about">
+  <div class="kicker">ABOUT</div>
+  <div class="title">Professional Summary</div>
+  <p class="sub">
+    Motivated BBA student with strong leadership, analytical thinking and adaptability.
+    Experienced in entrepreneurship projects, marketing simulations and volunteer work.
+  </p>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-title">PROJECTS</div>
-    <div class="section-heading">Featured Work</div>
+<!-- EDUCATION -->
+<section id="education">
+  <div class="kicker">EDUCATION</div>
+  <div class="title">Academic Background</div>
 
-    <div class="grid">
-      <div class="card">
-        <h3>SafeSwitch</h3>
-        <p>A business-focused innovation project demonstrating structured problem solving.</p>
-      </div>
+  <div class="grid">
+    <div class="card"><h3>BBA</h3><p>Bahria University Karachi</p></div>
+    <div class="card"><h3>Intermediate</h3><p>Khatoon-e-Pakistan College</p></div>
+    <div class="card"><h3>Matric</h3><p>Happy Home High School</p></div>
+  </div>
+</section>
 
-      <div class="card">
-        <h3>Zvyelle</h3>
-        <p>A branding and creative strategy project with entrepreneurial insight.</p>
-      </div>
-    </div>
-  </section>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="kicker">EXPERIENCE</div>
+  <div class="title">Professional Journey</div>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="section-title">CONTACT</div>
-    <div class="section-heading">Let’s Connect</div>
+  <div class="grid">
+    <div class="card"><h3>SafeSwitch</h3><p>Marketing strategy, branding & pitch development for smart safety product startup.</p></div>
+    <div class="card"><h3>Zyvelle</h3><p>Product branding, sales execution and customer engagement in business simulation.</p></div>
+    <div class="card"><h3>CBTL Interview</h3><p>Business operations analysis through structured management interview.</p></div>
+    <div class="card"><h3>Volunteer Work</h3><p>Child engagement programs at Dar-ul-Sukoon & Alkhidmat.</p></div>
+  </div>
+</section>
 
-    <p>Email: <a href="mailto:nsukaina4@outlook.com">nsukaina4@outlook.com</a></p>
-    <p style="margin-top:10px;">
-      <a href="https://www.linkedin.com/in/sukaina-b-naqvi-5953aa3b6">LinkedIn</a> |
-      <a href="https://www.instagram.com/sukaina________n">Instagram</a>
-    </p>
-  </section>
+<!-- SKILLS -->
+<section>
+  <div class="kicker">SKILLS</div>
+  <div class="title">Core Competencies</div>
 
-  <footer>
-    © 2026 Sukaina Batool Naqvi | Business Portfolio
-  </footer>
+  <div class="grid">
+    <div class="card"><h3>Leadership</h3><p>Team coordination & responsibility</p></div>
+    <div class="card"><h3>Critical Thinking</h3><p>Problem solving & analysis</p></div>
+    <div class="card"><h3>Design</h3><p>Graphic & branding skills</p></div>
+    <div class="card"><h3>Communication</h3><p>Presentation & teamwork</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="kicker">CONTACT</div>
+  <div class="title">Let’s Connect</div>
+  <p class="sub">nsukaina4@outlook.com | +92 332 3511903</p>
+</section>
+
+<footer>© 2026 Sukaina Batool Naqvi</footer>
+
+<script>
+  // typing effect
+  const text="Sukaina Batool Naqvi";
+  let i=0;
+  function type(){
+    if(i<text.length){
+      document.getElementById("type").innerHTML+=text.charAt(i);
+      i++;
+      setTimeout(type,80);
+    }
+  }
+  type();
+
+  // scroll animation
+  const cards=document.querySelectorAll('.card');
+  const obs=new IntersectionObserver(e=>{
+    e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+  },{threshold:0.2});
+  cards.forEach(c=>obs.observe(c));
+</script>
 
 </body>
 </html>
