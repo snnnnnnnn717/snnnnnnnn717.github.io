@@ -1,205 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sukaina Batool Naqvi | Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sukaina Batool Naqvi | Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
+<style>
+:root{
+  --bg:#020a07;
+  --card:rgba(255,255,255,0.04);
+  --border:rgba(255,255,255,0.08);
+  --text:#eaeaea;
+  --muted:#a7a7a7;
+  --accent:#10b981;
+}
 
-    body{
-      background:radial-gradient(circle at top,#031a13 0%,#000 60%,#000 100%);
-      color:#e7e7e7;
-      overflow-x:hidden;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
 
-    a{text-decoration:none;color:inherit;}
+html{scroll-behavior:smooth;}
 
-    /* GRID BACKGROUND */
-    body:before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
-      background-size:70px 70px;
-      pointer-events:none;
-      z-index:-2;
-    }
+body{
+  background:radial-gradient(circle at top,#031a13 0%,#000 65%);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-    /* GLOW */
-    .glow{
-      position:fixed;
-      width:600px;
-      height:600px;
-      filter:blur(180px);
-      opacity:0.14;
-      z-index:-1;
-    }
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:70px 70px;
+  pointer-events:none;
+  z-index:-2;
+}
 
-    .g1{top:-180px;left:-180px;background:#0f5132;}
-    .g2{bottom:-200px;right:-200px;background:#064e3b;}
+.glow{
+  position:fixed;
+  width:600px;
+  height:600px;
+  filter:blur(180px);
+  opacity:0.12;
+  z-index:-1;
+}
+.glow1{top:-200px;left:-200px;background:#0f5132;}
+.glow2{bottom:-200px;right:-200px;background:#064e3b;}
 
-    /* NAV */
-    nav{
-      position:fixed;
-      top:0;
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      padding:18px 60px;
-      background:rgba(0,0,0,0.5);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,0.06);
-      z-index:1000;
-    }
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:16px 60px;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
 
-    nav h1{font-size:16px;font-weight:600;color:#d1fae5;}
+nav h1{font-size:15px;color:#d1fae5;}
+nav a{margin-left:18px;font-size:12px;color:var(--muted);transition:.3s;}
+nav a:hover{color:var(--accent);}
 
-    nav a{
-      margin-left:22px;
-      font-size:12px;
-      color:#9ca3af;
-      transition:0.3s;
-    }
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  padding:0 60px;
+}
 
-    nav a:hover{color:#10b981;}
+.badge{
+  display:inline-block;
+  padding:6px 12px;
+  border:1px solid var(--accent);
+  border-radius:999px;
+  color:var(--accent);
+  font-size:11px;
+  letter-spacing:2px;
+  margin-bottom:16px;
+}
 
-    /* HERO */
-    .hero{
-      height:100vh;
-      display:flex;
-      align-items:center;
-      padding:0 60px;
-    }
+h2{
+  font-size:64px;
+  line-height:1.05;
+}
 
-    .badge{
-      display:inline-block;
-      padding:6px 14px;
-      border:1px solid #10b981;
-      border-radius:999px;
-      color:#10b981;
-      font-size:11px;
-      letter-spacing:2px;
-      margin-bottom:18px;
-    }
+.sub{
+  max-width:750px;
+  margin-top:14px;
+  color:var(--muted);
+  line-height:1.6;
+  font-size:15px;
+}
 
-    h2{
-      font-size:64px;
-      line-height:1.05;
-      color:#fff;
-      letter-spacing:-1px;
-      min-height:70px;
-    }
+.btns{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;}
 
-    .cursor{
-      display:inline-block;
-      width:10px;
-      background:#10b981;
-      margin-left:5px;
-      animation:blink 1s infinite;
-    }
+.btn{
+  padding:12px 18px;
+  border-radius:12px;
+  font-size:13px;
+  transition:.3s;
+  display:inline-block;
+}
 
-    @keyframes blink{
-      50%{opacity:0;}
-    }
+.primary{background:var(--accent);color:#000;font-weight:600;}
+.primary:hover{transform:translateY(-2px);}
 
-    .sub{
-      margin-top:18px;
-      max-width:780px;
-      color:#b5b5b5;
-      font-size:15px;
-      line-height:1.7;
-    }
+.outline{border:1px solid var(--border);}
+.outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
 
-    .btn{
-      display:inline-block;
-      padding:12px 22px;
-      border-radius:12px;
-      margin-right:12px;
-      margin-top:28px;
-      font-size:13px;
-      transition:0.3s;
-    }
+section{
+  padding:90px 60px;
+  max-width:1100px;
+  margin:auto;
+}
 
-    .primary{background:#10b981;color:#000;font-weight:600;}
-    .primary:hover{transform:translateY(-2px);background:#0ea371;}
+.kicker{color:var(--accent);font-size:11px;letter-spacing:3px;}
+.title{font-size:34px;margin:8px 0 24px;}
 
-    .outline{border:1px solid rgba(255,255,255,0.18);color:#e5e5e5;}
-    .outline:hover{border-color:#10b981;color:#10b981;transform:translateY(-2px);}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
 
-    section{
-      padding:120px 60px;
-      max-width:1150px;
-      margin:auto;
-    }
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:20px;
+  border-radius:16px;
+  transition:.3s;
+}
 
-    .kicker{
-      color:#10b981;
-      font-size:11px;
-      letter-spacing:3px;
-      margin-bottom:10px;
-    }
+.card:hover{transform:translateY(-6px);border-color:var(--accent);}
 
-    .title{
-      font-size:40px;
-      margin-bottom:35px;
-      color:#fff;
-    }
+.card h3{font-size:16px;margin-bottom:8px;}
+.card p{font-size:13px;color:var(--muted);line-height:1.5;}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:24px;
-    }
+/* TIMELINE */
+.timeline{
+  border-left:2px solid rgba(255,255,255,0.08);
+  padding-left:18px;
+}
 
-    .card{
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.06);
-      padding:24px;
-      border-radius:18px;
-      backdrop-filter:blur(12px);
-      transition:0.4s;
-      opacity:0;
-      transform:translateY(18px);
-    }
+.item{margin-bottom:18px;}
+.item span{color:var(--accent);font-size:12px;}
 
-    .card.show{
-      opacity:1;
-      transform:translateY(0);
-    }
+/* CONTACT */
+.contact{
+  display:grid;
+  gap:10px;
+  font-size:14px;
+  color:var(--muted);
+}
 
-    .card:hover{
-      transform:translateY(-6px);
-      border-color:#10b981;
-    }
+footer{
+  text-align:center;
+  padding:30px;
+  color:#666;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
 
-    .card h3{color:#fff;margin-bottom:10px;}
-    .card p{font-size:13.5px;color:#cfcfcf;line-height:1.6;}
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:.6s;}
+.reveal.show{opacity:1;transform:translateY(0);}
 
-    footer{
-      text-align:center;
-      padding:40px;
-      color:#666;
-      border-top:1px solid rgba(255,255,255,0.05);
-    }
+@media(max-width:768px){
+  h2{font-size:40px;}
+  nav{padding:14px 20px;}
+  section{padding:70px 20px;}
+  .hero{padding:0 20px;}
+}
 
-    @media(max-width:768px){
-      h2{font-size:42px;}
-      nav{padding:14px 20px;}
-      section{padding:90px 20px;}
-      .hero{padding:0 20px;}
-    }
-  </style>
+</style>
 </head>
 <body>
 
-<div class="glow g1"></div>
-<div class="glow g2"></div>
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
 
 <nav>
   <h1>Sukaina Naqvi</h1>
@@ -216,95 +201,106 @@
 <div class="hero">
   <div>
     <div class="badge">BUSINESS PORTFOLIO</div>
+    <h2>Sukaina Batool Naqvi</h2>
+    <p class="sub">Aspiring business professional focused on strategy, marketing, leadership, and high-impact problem solving.</p>
 
-    <h2 id="type"></h2><span class="cursor"></span>
-
-    <p class="sub">
-      Aspiring business professional focused on strategy, marketing, leadership and
-      creative problem solving with a modern corporate mindset.
-    </p>
-
-    <a class="btn primary" href="#projects">Explore Work</a>
-    <a class="btn outline" href="mailto:nsukaina4@outlook.com">Contact</a>
+    <div class="btns">
+      <a class="btn primary" href="#projects">View Work</a>
+      <a class="btn outline" href="https://canva.link/230r5vm2sirtvkq" target="_blank">Download CV</a>
+    </div>
   </div>
 </div>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="reveal">
   <div class="kicker">ABOUT</div>
   <div class="title">Professional Summary</div>
-  <p class="sub">
-    Motivated BBA student with strong leadership, analytical thinking and adaptability.
-    Experienced in entrepreneurship projects, marketing simulations and volunteer work.
-  </p>
+  <p class="sub">Motivated BBA student with strengths in leadership, analysis, teamwork, and structured thinking. Experienced in marketing simulations, entrepreneurship projects, and volunteer initiatives.</p>
 </section>
 
 <!-- EDUCATION -->
-<section id="education">
+<section id="education" class="reveal">
   <div class="kicker">EDUCATION</div>
   <div class="title">Academic Background</div>
 
   <div class="grid">
-    <div class="card"><h3>BBA</h3><p>Bahria University Karachi</p></div>
-    <div class="card"><h3>Intermediate</h3><p>Khatoon-e-Pakistan College</p></div>
-    <div class="card"><h3>Matric</h3><p>Happy Home High School</p></div>
+    <div class="card"><h3>BBA (2024–Present)</h3><p>Bahria University Karachi</p></div>
+    <div class="card"><h3>Intermediate (2022–2024)</h3><p>Khatoon-e-Pakistan College</p></div>
+    <div class="card"><h3>Matric (2020–2022)</h3><p>Happy Home High School</p></div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
+<section id="experience" class="reveal">
   <div class="kicker">EXPERIENCE</div>
-  <div class="title">Professional Journey</div>
+  <div class="title">Career Highlights</div>
 
-  <div class="grid">
-    <div class="card"><h3>SafeSwitch</h3><p>Marketing strategy, branding & pitch development for smart safety product startup.</p></div>
-    <div class="card"><h3>Zyvelle</h3><p>Product branding, sales execution and customer engagement in business simulation.</p></div>
-    <div class="card"><h3>CBTL Interview</h3><p>Business operations analysis through structured management interview.</p></div>
-    <div class="card"><h3>Volunteer Work</h3><p>Child engagement programs at Dar-ul-Sukoon & Alkhidmat.</p></div>
+  <div class="timeline">
+    <div class="item">
+      <span>SafeSwitch</span>
+      <p>Led marketing strategy, branding, segmentation, and pitch development for smart safety startup concept.</p>
+    </div>
+
+    <div class="item">
+      <span>Zyvelle</span>
+      <p>Executed product branding and sales operations in entrepreneurial simulation project.</p>
+    </div>
+
+    <div class="item">
+      <span>CBTL Interview</span>
+      <p>Analyzed management workflow through structured interview with corporate manager.</p>
+    </div>
+
+    <div class="item">
+      <span>Volunteer Work</span>
+      <p>Engaged in child development activities at Dar-ul-Sukoon and Alkhidmat Agosh Home.</p>
+    </div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section>
-  <div class="kicker">SKILLS</div>
-  <div class="title">Core Competencies</div>
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+  <div class="kicker">PROJECTS</div>
+  <div class="title">Selected Work</div>
 
   <div class="grid">
-    <div class="card"><h3>Leadership</h3><p>Team coordination & responsibility</p></div>
-    <div class="card"><h3>Critical Thinking</h3><p>Problem solving & analysis</p></div>
-    <div class="card"><h3>Design</h3><p>Graphic & branding skills</p></div>
-    <div class="card"><h3>Communication</h3><p>Presentation & teamwork</p></div>
+    <div class="card">
+      <h3>SafeSwitch</h3>
+      <p>Full business model: product concept, market research, branding strategy, and investor pitch deck.</p>
+    </div>
+
+    <div class="card">
+      <h3>Zyvelle</h3>
+      <p>Built and executed micro-business including branding, customer engagement, and sales strategy.</p>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="reveal">
   <div class="kicker">CONTACT</div>
   <div class="title">Let’s Connect</div>
-  <p class="sub">nsukaina4@outlook.com | +92 332 3511903</p>
+
+  <div class="contact">
+    <div>📧 nsukaina4@outlook.com</div>
+    <div>📞 +92 332 3511903</div>
+    <div>🔗 linkedin.com/in/sukaina-naqvi-5953aa3b6</div>
+    <div>📸 instagram.com/sukaina________n</div>
+  </div>
+
+  <div class="btns">
+    <a class="btn primary" href="https://canva.link/230r5vm2sirtvkq" target="_blank">Download CV</a>
+  </div>
 </section>
 
 <footer>© 2026 Sukaina Batool Naqvi</footer>
 
 <script>
-  // typing effect
-  const text="Sukaina Batool Naqvi";
-  let i=0;
-  function type(){
-    if(i<text.length){
-      document.getElementById("type").innerHTML+=text.charAt(i);
-      i++;
-      setTimeout(type,80);
-    }
-  }
-  type();
-
-  // scroll animation
-  const cards=document.querySelectorAll('.card');
-  const obs=new IntersectionObserver(e=>{
-    e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
-  },{threshold:0.2});
-  cards.forEach(c=>obs.observe(c));
+const els=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+},{threshold:0.15});
+els.forEach(e=>obs.observe(e));
 </script>
 
 </body>
